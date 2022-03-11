@@ -8,7 +8,7 @@ const SearchTopWrap = styled.div`
         font-weight:800;
         font-size:1.5em;
     }
-    margin:3em 0 1.5em 0;
+    margin-top:3em;
     border-bottom:1px solid #eee;
 `
 

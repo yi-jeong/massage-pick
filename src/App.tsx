@@ -4,12 +4,13 @@ import './App.css';
 import { Reset } from 'styled-reset';
 import MainPage from './pages/MainPage';
 import SearchPage from './pages/SearchPage';
+import DetailPage from './pages/DetailPage';
 
 function App() {
   return (
     <>
       <Reset />
-      <SearchPage />
+      <DetailPage />
     </>
   );
 }
