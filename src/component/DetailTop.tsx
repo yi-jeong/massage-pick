@@ -15,7 +15,8 @@ const MenubarWrap = styled.div`
 const DetailImgWrap = styled.div`
     width:100%;
     height:40vh;
-    background:url(${itemimg02}) no-repeat center center;
+    background:url(${itemimg02});
+    background-attachment: fixed;
     background-size:cover;
 `
 

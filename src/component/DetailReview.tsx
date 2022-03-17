@@ -48,6 +48,9 @@ const DetailReviewContent = styled.li`
         color:#555;
         padding:1em 0;
     }
+    span{
+        margin-right:0.5em;
+    }
 `
 
 function DetailReview(){
