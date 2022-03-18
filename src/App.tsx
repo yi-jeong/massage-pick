@@ -5,12 +5,14 @@ import { Reset } from 'styled-reset';
 import MainPage from './pages/MainPage';
 import SearchPage from './pages/SearchPage';
 import DetailPage from './pages/DetailPage';
+import LoginPage from './pages/LoginPage';
+import JoinPage from './pages/JoinPage';
 
 function App() {
   return (
     <>
       <Reset />
-      <DetailPage />
+      <JoinPage />
     </>
   );
 }
