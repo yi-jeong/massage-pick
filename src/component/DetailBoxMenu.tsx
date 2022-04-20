@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, {css} from "styled-components";
 
 const DetailBoxMenuWrap = styled.ul`
@@ -25,15 +25,17 @@ const DetailBoxMenuContent = styled.li<{On:boolean}>`
     }
 `
 
-function DetailBoxMenu(){
-    const On=true;
-    const Off=false;
+function DetailBoxMenu(props:any){
+
+    const On = true;
+    const Off = false;
+
     return(
         <DetailBoxMenuWrap>
-            <DetailBoxMenuContent On={Off}>홈</DetailBoxMenuContent>
-            <DetailBoxMenuContent On={On}>프로그램</DetailBoxMenuContent>
-            <DetailBoxMenuContent On={Off}>리뷰</DetailBoxMenuContent>
-            <DetailBoxMenuContent On={Off}>추천</DetailBoxMenuContent>
+            <DetailBoxMenuContent onClick={()=> props.getData(1)} On={ props.menuCode == 1 ? On : Off }>홈</DetailBoxMenuContent>
+            <DetailBoxMenuContent onClick={()=> props.getData(2)} On={ props.menuCode == 2 ? On : Off }>프로그램</DetailBoxMenuContent>
+            <DetailBoxMenuContent onClick={()=> props.getData(3)} On={ props.menuCode == 3 ? On : Off }>리뷰</DetailBoxMenuContent>
+            <DetailBoxMenuContent onClick={()=> props.getData(4)} On={ props.menuCode == 4 ? On : Off }>추천</DetailBoxMenuContent>
         </DetailBoxMenuWrap>
     )
 }

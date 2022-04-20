@@ -5,6 +5,7 @@ import itemimg02 from "../assets/img/item-img-02.png";
 import { Icon } from 'react-icons-kit'
 import {heart} from 'react-icons-kit/fa/heart'
 import {commentO} from 'react-icons-kit/fa/commentO'
+import { Link } from "react-router-dom";
 
 const ListStyleWrap = styled.ul`
     display:flex;
@@ -19,6 +20,10 @@ const ListStyleBoxWrap = styled.li`
 
 const ListStyleBox = styled.div`;
     padding:0 0.5em;
+    a{
+        text-decoration:none;
+        color:#000;
+    }
     img{
         width:100%;
         border-radius:0.5em;
@@ -48,42 +53,50 @@ function ListStyleP(){
         <ListStyleWrap>
             <ListStyleBoxWrap>
                 <ListStyleBox>
+                <Link to="/detail" >
                     <img src={itemimg01}/>
                     <h3>마사지샵 상호명</h3>
                     <p>
                         <span><Icon size={16} icon={commentO} /> 1524</span>
                         <span><Icon size={16} icon={heart} /> 252</span>
                     </p>
+                </Link>
                 </ListStyleBox>
             </ListStyleBoxWrap>
             <ListStyleBoxWrap>
                 <ListStyleBox>
+                <Link to="/detail" >
                     <img src={itemimg02}/>
                     <h3>마사지샵 상호명</h3>
                     <p>
                         <span><Icon size={16} icon={commentO} /> 1524</span>
                         <span><Icon size={16} icon={heart} /> 252</span>
                     </p>
+                </Link>
                 </ListStyleBox>
             </ListStyleBoxWrap>
             <ListStyleBoxWrap>
                 <ListStyleBox>
+                <Link to="/detail" >
                     <img src={itemimg01}/>
                     <h3>마사지샵 상호명</h3>
                     <p>
                         <span><Icon size={16} icon={commentO} /> 1524</span>
                         <span><Icon size={16} icon={heart} /> 252</span>
                     </p>
+                </Link>
                 </ListStyleBox>
             </ListStyleBoxWrap>
             <ListStyleBoxWrap>
                 <ListStyleBox>
+                <Link to="/detail" >
                     <img src={itemimg02}/>
                     <h3>마사지샵 상호명</h3>
                     <p>
                         <span><Icon size={16} icon={commentO} /> 1524</span>
                         <span><Icon size={16} icon={heart} /> 252</span>
                     </p>
+                </Link>
                 </ListStyleBox>
             </ListStyleBoxWrap>
         </ListStyleWrap>

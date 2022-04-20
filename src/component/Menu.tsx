@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import iconSrc from '../assets/img/menu-icon.png';
+import { Link } from "react-router-dom";
 
 const MenuWrap = styled.div`
     width:100%;
@@ -30,6 +31,10 @@ const MenuBoxWrap = styled.ul`
 `
 
 const MenuBox = styled.li`
+    a{
+        text-decoration:none;
+        color:#333;
+    }
     span{
         display:block;
         width:50px;
@@ -86,44 +91,64 @@ function Menu(){
             <MenuTit>MassagePick</MenuTit>
             <MenuBoxWrap>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     신규업소
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     1인샵
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     스웨디시
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     로미로미
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     타이
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     중국식
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     아로마
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     홈케어
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     왁싱
+                </Link>
                 </MenuBox>
                 <MenuBox>
+                <Link to="/search">
                     <span className="icon"></span>
                     스파/사우나
+                </Link>
                 </MenuBox>
                 <MenuBox>
                     <span className="icon"></span>
