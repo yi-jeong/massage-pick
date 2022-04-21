@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React,{ useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import itemimg01 from "../assets/img/item-img-01.png";
 import { Icon } from 'react-icons-kit'
@@ -96,38 +96,59 @@ const ItemInfo = styled.div<{like:Boolean}>`
     align-content: space-between;
     width:60%;
 `
+interface shopListType{
+    id: number,
+    title: string,
+    address: string,
+    price: string,
+    comment: number,
+    like: number
+};
 
 function SearchItem(){
 
     const [like, setLike] = useState<Boolean>(true);
+    const [shopList,setShopList] = useState<shopListType[]>([]);
+    
+    useEffect(()=>{
+        fetch('/massage-pick/data/listbox.json',{
+            method: 'GET'
+        })
+        .then( res => res.json() )
+        .then( data => {
+            setShopList(data);
+        });
+    },[]);
 
+    
     return(
         <SearchItemWrap>
             <Container>
                 <SearchItemBoxWrap>
 
-                    { /* li 박스. map 돌려서 구현 예정 */} 
-
-                    <SearchItemBox>
-                        <ItemThumb><img src={itemimg01} /></ItemThumb>
-                        <ItemInfo like={like}>
-                            <ul>
-                                <li><h3>마사지샵 상호명</h3></li>
-                                <li className="road">04520 서울시 중구 세종대로 124</li>
-                            </ul>
-                            <ul>
-                                <li className="price">코스 <span>20,000~</span></li>
-                                <li>
-                                <p>
-                                    <span className="comment"><Icon size={16} icon={commentO} /><span className="data">1524</span></span>
-                                    <span className="like" onClick={()=> setLike(!like)}><Icon size={16} icon={heart} /><span className="data">252</span></span>
-                                </p>
-                                </li>
-                            </ul>
-                        </ItemInfo>
-                    </SearchItemBox>
-
-                    { /* li 박스. map 돌려서 구현 예정 */} 
+                    { shopList.map( (n)=>{
+                        return(
+                            <SearchItemBox>
+                            <ItemThumb><img src={itemimg01} /></ItemThumb>
+                            <ItemInfo like={like}>
+                                <ul>
+                                    <li><h3>{n.title}</h3></li>
+                                    <li className="road">{n.address}</li>
+                                </ul>
+                                <ul>
+                                    <li className="price">코스 <span>{n.price}</span></li>
+                                    <li>
+                                    <p>
+                                        <span className="comment"><Icon size={16} icon={commentO} /><span className="data">{n.comment}</span></span>
+                                        <span className="like" onClick={()=> setLike(!like)}><Icon size={16} icon={heart} /><span className="data">{n.like}</span></span>
+                                    </p>
+                                    </li>
+                                </ul>
+                            </ItemInfo>
+                            </SearchItemBox>
+                        );
+                    })
+                    } 
 
                 </SearchItemBoxWrap>
             </Container>
