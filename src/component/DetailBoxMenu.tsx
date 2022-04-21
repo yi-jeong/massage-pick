@@ -25,7 +25,12 @@ const DetailBoxMenuContent = styled.li<{On:boolean}>`
     }
 `
 
-function DetailBoxMenu(props:any){
+interface Menu{
+    menuCode: number;
+    getData:(n:number)=>void;
+}
+
+function DetailBoxMenu(props:Menu){
 
     const On = true;
     const Off = false;

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React,{ useState } from "react";
+import styled, { css } from "styled-components";
 import itemimg01 from "../assets/img/item-img-01.png";
 import { Icon } from 'react-icons-kit'
 import {heart} from 'react-icons-kit/fa/heart'
@@ -32,7 +32,7 @@ const ItemThumb = styled.div`
     margin-right:1em;
 ` 
 
-const ItemInfo = styled.div`
+const ItemInfo = styled.div<{like:Boolean}>`
     h3{ 
         font-size:1.3em; 
         font-weight:700; 
@@ -58,14 +58,39 @@ const ItemInfo = styled.div`
         font-size:0.9em;
     }
     p span{
+        position:relative;
         display: flex;
         align-items: flex-end;
         font-family: 'Montserrat';
         margin-right:1em;
     }
+    p span .data{
+        padding-left:1.5em;
+    }
     i{
-        color:#666;
+        position:absolute;
         margin-right:0.3em;
+    }
+    ${props => props.like ?
+        css`
+            .like i{
+                color:#FF6A6A;
+                animation: clickmotion 1s linear 0s alternate;
+            }
+            @keyframes clickmotion{
+                0%{  }
+                30%{ top:3px; }
+                60%{ top:-5px; }
+                80%{ top:-5px; }
+                100%{ top:-2px; }
+            }
+        `
+        :
+        css`
+            i{
+                color:#333;
+            }
+        `
     }
     display:grid;
     align-content: space-between;
@@ -73,6 +98,9 @@ const ItemInfo = styled.div`
 `
 
 function SearchItem(){
+
+    const [like, setLike] = useState<Boolean>(true);
+
     return(
         <SearchItemWrap>
             <Container>
@@ -82,7 +110,7 @@ function SearchItem(){
 
                     <SearchItemBox>
                         <ItemThumb><img src={itemimg01} /></ItemThumb>
-                        <ItemInfo>
+                        <ItemInfo like={like}>
                             <ul>
                                 <li><h3>마사지샵 상호명</h3></li>
                                 <li className="road">04520 서울시 중구 세종대로 124</li>
@@ -91,8 +119,8 @@ function SearchItem(){
                                 <li className="price">코스 <span>20,000~</span></li>
                                 <li>
                                 <p>
-                                    <span><Icon size={16} icon={commentO} /> 1524</span>
-                                    <span><Icon size={16} icon={heart} /> 252</span>
+                                    <span className="comment"><Icon size={16} icon={commentO} /><span className="data">1524</span></span>
+                                    <span className="like" onClick={()=> setLike(!like)}><Icon size={16} icon={heart} /><span className="data">252</span></span>
                                 </p>
                                 </li>
                             </ul>

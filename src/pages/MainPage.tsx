@@ -5,6 +5,7 @@ import MainPopular from '../component/MainPopular';
 import MainNew from '../component/MainNew';
 import MainEvent from '../component/MainEvent';
 import Footer from '../component/Footer';
+import BottomFixed from '../component/BottomFixed';
 
 function MainPage() {
     return (
@@ -15,6 +16,7 @@ function MainPage() {
         <MainNew />
         <MainEvent />
         <Footer />
+        <BottomFixed />
       </>
     );
   }
