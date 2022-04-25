@@ -5,7 +5,8 @@
         "address": "04520 서울시 중구 세종대로 124",
         "price":"20,000 ~",
         "comment": 1234,
-        "like":5
+        "like":5,
+        "likeactive":false
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":2
+        "like":2,
+        "likeactive":false
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":1
+        "like":1,
+        "likeactive":false
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":13
+        "like":13,
+        "likeactive":true
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":26
+        "like":26,
+        "likeactive":true
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":521
+        "like":521,
+        "likeactive":true
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":643
+        "like":643,
+        "likeactive":true
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":22
+        "like":22,
+        "likeactive":true
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":2
+        "like":2,
+        "likeactive":false
     },
     {
         "id": 10,
@@ -77,6 +86,7 @@
         "address": "04520 서울시 중구 세종대로 1312312412",
         "price":"50,000 ~",
         "comment": 111,
-        "like":21
+        "like":21,
+        "likeactive":false
     }
 ]

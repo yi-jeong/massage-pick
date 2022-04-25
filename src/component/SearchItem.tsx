@@ -4,6 +4,7 @@ import itemimg01 from "../assets/img/item-img-01.png";
 import { Icon } from 'react-icons-kit'
 import {heart} from 'react-icons-kit/fa/heart'
 import {commentO} from 'react-icons-kit/fa/commentO'
+import { shopListType } from "../pages/SearchPage"
 
 const SearchItemWrap = styled.div`
     
@@ -96,39 +97,21 @@ const ItemInfo = styled.div<{like:Boolean}>`
     align-content: space-between;
     width:60%;
 `
-interface shopListType{
-    id: number,
-    title: string,
-    address: string,
-    price: string,
-    comment: number,
-    like: number
-};
 
-function SearchItem(){
+function SearchItem(shopList: shopListType['shopList'], likeCount: void){
 
     const [like, setLike] = useState<Boolean>(true);
-    const [shopList,setShopList] = useState<shopListType[]>([]);
-    
-    useEffect(()=>{
-        fetch('/massage-pick/data/listbox.json',{
-            method: 'GET'
-        })
-        .then( res => res.json() )
-        .then( data => {
-            setShopList(data);
-        });
-    },[]);
 
-    
+    console.log(shopList)
+
     return(
         <SearchItemWrap>
             <Container>
                 <SearchItemBoxWrap>
 
-                    { shopList.map( (n)=>{
+                    { Object.values(shopList).map( n=> {
                         return(
-                            <SearchItemBox>
+                        <SearchItemBox key={n.id}>
                             <ItemThumb><img src={itemimg01} /></ItemThumb>
                             <ItemInfo like={like}>
                                 <ul>
@@ -145,10 +128,9 @@ function SearchItem(){
                                     </li>
                                 </ul>
                             </ItemInfo>
-                            </SearchItemBox>
-                        );
-                    })
-                    } 
+                        </SearchItemBox>    
+                        )
+                    }) }
 
                 </SearchItemBoxWrap>
             </Container>
