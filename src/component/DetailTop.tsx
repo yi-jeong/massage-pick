@@ -4,6 +4,7 @@ import itemimg02 from "../assets/img/item-img-02.png";
 import { Icon } from 'react-icons-kit'
 import {chevronLeft} from 'react-icons-kit/fa/chevronLeft'
 import {home} from 'react-icons-kit/fa/home'
+import { Link } from "react-router-dom";
 
 const MenubarWrap = styled.div`
     i{ margin-right:0.5em; }
@@ -30,7 +31,9 @@ function DetailTop(){
         <MenubarWrap>
         <Container>
             <Icon icon={chevronLeft} />
-            <Icon icon={home} size={21}/>
+            <Link to="/">
+                <Icon icon={home} size={21}/>
+            </Link>
         </Container>
         </MenubarWrap>
         <DetailImgWrap />

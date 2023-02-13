@@ -56,8 +56,8 @@ const DetailPlusInfo = styled.div`
     margin:2em 0;
     h2{ display:flex; align-items: self-end; }
     h2 img{ margin-right:0.3em; }
-    ul{ display:flex; color:#555; margin:0.5em 0; }
-    ul li{ padding:0.5em 1em; background:#eee; border-radius:3em; font-size:0.8em; margin-right:0.5em; }
+    ul{ display:flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; color:#555; }
+    ul li{ padding:0.5em 1em; background:#eee; border-radius:3em; font-size:0.8em; }
 `
 
 const DetailMap = styled.div`

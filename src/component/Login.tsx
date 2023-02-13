@@ -3,6 +3,7 @@ import styled from "styled-components";
 import IconGoogleImg from "../assets/img/Icon-login-google.png"
 import IconKakaoImg from "../assets/img/Icon-login-kakao.png"
 import IconNaverImg from "../assets/img/Icon-login-naver.png"
+import { Link } from "react-router-dom";
 
 const LoginWrap = styled.div`
     width:100%;
@@ -120,7 +121,7 @@ function Login(){
                     </LoginForm>
                     <LoginInfoWrap>
                         <LoginInfo>비밀번호 찾기</LoginInfo>
-                        <LoginInfo>회원가입</LoginInfo>
+                        <LoginInfo><Link to="/join">회원가입</Link></LoginInfo>
                     </LoginInfoWrap>
                     <FastLoginWrap>
                         <h2><span>소셜 계정</span>으로 간편 로그인·회원가입</h2>

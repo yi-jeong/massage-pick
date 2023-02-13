@@ -4,6 +4,7 @@ import styled from "styled-components";
 const FooterWrap = styled.footer`
     border-top:1px solid #f5f5f5;
     padding:2em 0;
+    margin-bottom: 50px;
 `
 
 const FooterContainer = styled.div`

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const BottomWrap = styled.div`
     position:fixed;
@@ -38,8 +39,10 @@ function BottomFixed(){
                         내주변
                     </BottomFixedMenu>
                     <BottomFixedMenu>
-                        <span className="icon"></span>
-                        마이페이지
+                        <Link to="/login">
+                            <span className="icon"></span>
+                            마이페이지
+                        </Link>                    
                     </BottomFixedMenu>
                 </BottomFixedMenuWrap>
             </BottomFixedWrap>
